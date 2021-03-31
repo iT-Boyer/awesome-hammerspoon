@@ -371,3 +371,6 @@ end
 ----------------------------------------------------------------------------------------------------
 -- Finally we initialize ModalMgr supervisor
 spoon.ModalMgr.supervisor:enter()
+
+local clocking = require "clocking"
+clocking.init()
