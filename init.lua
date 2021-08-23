@@ -372,5 +372,6 @@ end
 -- Finally we initialize ModalMgr supervisor
 spoon.ModalMgr.supervisor:enter()
 
-local clocking = require "clocking"
-clocking.init()
+-- emacs 在mac状态栏显示当前任务。无法使用废弃
+-- local clocking = require "clocking"
+-- clocking.init()
