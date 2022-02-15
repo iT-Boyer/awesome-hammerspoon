@@ -38,14 +38,14 @@ local function updateClockingMenu()
 end
 
 local function startUpdatingClockingMenu()
-   hs.timer.doEvery(10, updateClockingMenu)
+   return hs.timer.doEvery(5, updateClockingMenu)
 end
 
 local mod = {}
 
 function mod.init()
     updateClockingMenu()
-    startUpdatingClockingMenu()
+    return startUpdatingClockingMenu()
 end
 
 return mod

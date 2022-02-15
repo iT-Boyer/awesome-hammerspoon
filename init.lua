@@ -373,5 +373,5 @@ end
 spoon.ModalMgr.supervisor:enter()
 
 -- emacs 在mac状态栏显示当前任务。无法使用废弃
--- local clocking = require "clocking"
--- clocking.init()
+local clocking = require "clocking"
+dateTimeGarbageCollectorPreventer = clocking.init()
