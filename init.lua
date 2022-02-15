@@ -69,6 +69,7 @@ end
 
 ----------------------------------------------------------------------------------------------------
 -- appM modal environment
+-- alt + a : 显示启动app的热键
 spoon.ModalMgr:new("appM")
 local cmodal = spoon.ModalMgr.modal_list["appM"]
 cmodal:bind('', 'escape', 'Deactivate appM', function() spoon.ModalMgr:deactivate({"appM"}) end)
@@ -112,6 +113,7 @@ end
 
 ----------------------------------------------------------------------------------------------------
 -- clipshowM modal environment
+-- alt+c 剪切板内容管理
 if spoon.ClipShow then
     spoon.ModalMgr:new("clipshowM")
     local cmodal = spoon.ModalMgr.modal_list["clipshowM"]
@@ -254,6 +256,7 @@ end
 
 ----------------------------------------------------------------------------------------------------
 -- Register lock screen
+-- 锁屏
 hslock_keys = hslock_keys or {"alt", "L"}
 if string.len(hslock_keys[2]) > 0 then
     spoon.ModalMgr.supervisor:bind(hslock_keys[1], hslock_keys[2], "Lock Screen", function()
@@ -337,6 +340,7 @@ end
 
 ----------------------------------------------------------------------------------------------------
 -- Register AClock
+-- 浮动显示当前时间
 if spoon.AClock then
     hsaclock_keys = hsaclock_keys or {"alt", "T"}
     if string.len(hsaclock_keys[2]) > 0 then
@@ -346,6 +350,7 @@ end
 
 ----------------------------------------------------------------------------------------------------
 -- Register browser tab typist: Type URL of current tab of running browser in markdown format. i.e. [title](link)
+-- 在当前编辑器中，粘帖当前浏览器的url和title
 hstype_keys = hstype_keys or {"alt", "V"}
 if string.len(hstype_keys[2]) > 0 then
     spoon.ModalMgr.supervisor:bind(hstype_keys[1], hstype_keys[2], "Type Browser Link", function()
