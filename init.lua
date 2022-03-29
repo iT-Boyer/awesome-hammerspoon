@@ -218,6 +218,7 @@ end
 
 ----------------------------------------------------------------------------------------------------
 -- countdownM modal environment
+-- alt+i倒计时
 if spoon.CountDown then
     spoon.ModalMgr:new("countdownM")
     local cmodal = spoon.ModalMgr.modal_list["countdownM"]
@@ -256,7 +257,7 @@ end
 
 ----------------------------------------------------------------------------------------------------
 -- Register lock screen
--- 锁屏
+-- alt+l锁屏
 hslock_keys = hslock_keys or {"alt", "L"}
 if string.len(hslock_keys[2]) > 0 then
     spoon.ModalMgr.supervisor:bind(hslock_keys[1], hslock_keys[2], "Lock Screen", function()
@@ -375,6 +376,20 @@ end
 
 ----------------------------------------------------------------------------------------------------
 -- Finally we initialize ModalMgr supervisor
+--
+-- 绑定emacs-everywhere 快捷键
+-- https://www.coder.work/article/7121449
+local function emacs_everyWhereKeyRemap(mods, key)
+    local mods = mods or {}
+    hs.hotkey.bind(mods, key, function()
+        print("启动emacs-everywhere")
+        local shell_command = "/usr/local/bin/emacsclient --eval '(emacs-everywhere)'"
+        hs.execute(shell_command)
+    end)
+end
+emacs_everyWhereKeyRemap({"alt"}, "E")
+----------------------------------------------------------------------------------------------------
+
 spoon.ModalMgr.supervisor:enter()
 
 -- emacs 在mac状态栏显示当前任务。无法使用废弃
