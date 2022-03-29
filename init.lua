@@ -198,6 +198,7 @@ end
 
 ----------------------------------------------------------------------------------------------------
 -- Register Hammerspoon Search
+-- alt+g 搜索，类似alfred
 if spoon.HSearch then
     hsearch_keys = hsearch_keys or {"alt", "G"}
     if string.len(hsearch_keys[2]) > 0 then
@@ -267,6 +268,7 @@ end
 
 ----------------------------------------------------------------------------------------------------
 -- resizeM modal environment
+-- alt + r： 调整窗口大小和位置
 if spoon.WinWin then
     spoon.ModalMgr:new("resizeM")
     local cmodal = spoon.ModalMgr.modal_list["resizeM"]
