@@ -398,3 +398,7 @@ spoon.ModalMgr.supervisor:enter()
 -- emacs 在mac状态栏显示当前任务。无法使用废弃
 local clocking = require "clocking"
 dateTimeGarbageCollectorPreventer = clocking.init()
+-- 测试，暂时没有使用
+-- https://github.com/lodestone/hyper-hacks
+local hyper_hacks = require "hyper-hacks"
+hyperHack = hyper_hacks.init()
