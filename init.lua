@@ -386,6 +386,7 @@ local function emacs_everyWhereKeyRemap(mods, key)
     hs.hotkey.bind(mods, key, function()
         print("启动emacs-everywhere")
         local shell_command = "/usr/local/bin/emacsclient --eval '(emacs-everywhere)'"
+        -- local shell_command = "/Users/boyer/.emacs.d/bin/doom everywhere"
         hs.execute(shell_command)
     end)
 end
